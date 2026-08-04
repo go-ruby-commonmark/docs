@@ -12,10 +12,12 @@ by `rbgo` as a native module — the same pattern as
 [go-ruby-yaml](https://github.com/go-ruby-yaml/yaml). The dependency runs the
 other way: this library has **no dependency on the Ruby runtime**.
 
-!!! success "Status: pure-Go, CGO=0, differential-tested"
-    A faithful pure-Go port of Ruby's `commonmark`, validated against reference Ruby, at 100%
-    coverage, `gofmt` + `go vet` clean, CI green across the six 64-bit Go targets
-    and three OSes.
+!!! success "Status: CommonMark spec-complete — pure-Go, CGO=0"
+    Passes **all 652 / 652 [CommonMark spec v0.31.2](https://spec.commonmark.org/0.31.2/)
+    examples, byte-exact** (100%, 0 known gaps, held by a regression ratchet).
+    A faithful pure-Go port of Ruby's `commonmark`, additionally validated against
+    reference Ruby, at 100% coverage, `gofmt` + `go vet` clean, CI green across the
+    six 64-bit Go targets and three OSes.
 
 ## Install
 
