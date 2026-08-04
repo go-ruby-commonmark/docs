@@ -504,10 +504,12 @@ by <code>rbgo</code> as a native module — the same pattern as
 <a href="https://github.com/go-ruby-yaml/yaml">go-ruby-yaml</a>. The dependency runs the
 other way: this library has <strong>no dependency on the Ruby runtime</strong>.</p>
 <div class="admonition success">
-<p class="admonition-title">Status: pure-Go, CGO=0, differential-tested</p>
-<p>A faithful pure-Go port of Ruby's <code>commonmark</code>, validated against reference Ruby, at 100%
-coverage, <code>gofmt</code> + <code>go vet</code> clean, CI green across the six 64-bit Go targets
-and three OSes.</p>
+<p class="admonition-title">Status: CommonMark spec-complete — pure-Go, CGO=0</p>
+<p>Passes <strong>all 652 / 652 <a href="https://spec.commonmark.org/0.31.2/">CommonMark spec v0.31.2</a>
+examples, byte-exact</strong> (100%, 0 known gaps, held by a regression ratchet).
+A faithful pure-Go port of Ruby's <code>commonmark</code>, additionally validated against
+reference Ruby, at 100% coverage, <code>gofmt</code> + <code>go vet</code> clean, CI green across the
+six 64-bit Go targets and three OSes.</p>
 </div>
 <h2 id="install">Install<a class="headerlink" href="#install" title="Permanent link">&para;</a></h2>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>go<span class="w"> </span>get<span class="w"> </span>github.com/go-ruby-commonmark/commonmark

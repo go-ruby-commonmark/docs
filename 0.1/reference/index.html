@@ -515,10 +515,16 @@ pkg.go.dev:</p>
 examples and the full, up-to-date surface. This page intentionally links to those
 canonical sources rather than duplicating signatures that could drift out of date.</p>
 <h2 id="conformance">Conformance<a class="headerlink" href="#conformance" title="Permanent link">&para;</a></h2>
-<p>Behaviour is pinned by a <strong>differential oracle</strong> against reference Ruby: a corpus
-is run through both the <code>ruby</code> binary and this library and the results are compared,
-gated on the reference where relevant and skipping itself where <code>ruby</code> is absent so
-the cross-arch lanes still validate the library.</p>
+<p>The parser is <strong>CommonMark spec-complete</strong>: it passes <strong>all 652 / 652
+<a href="https://spec.commonmark.org/0.31.2/">CommonMark spec v0.31.2</a> examples,
+byte-exact</strong> — 100%, 0 known gaps. The upstream <code>spec.txt</code> is embedded and every
+example is run on every CI lane, and a ratchet test fails on any regression, so
+full conformance can only be held, never quietly lost.</p>
+<p><a href="https://spec.commonmark.org/0.31.2/"><img alt="CommonMark spec v0.31.2 652/652" src="https://img.shields.io/badge/CommonMark_spec_v0.31.2-652%2F652-1a7f37" /></a></p>
+<p>Behaviour is additionally pinned by a <strong>differential oracle</strong> against reference
+Ruby: a corpus is run through both the <code>ruby</code> binary and this library and the
+results are compared, gated on the reference where relevant and skipping itself
+where <code>ruby</code> is absent so the cross-arch lanes still validate the library.</p>
 
 
 
