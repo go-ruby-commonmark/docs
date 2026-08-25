@@ -29,7 +29,15 @@ canonical sources rather than duplicating signatures that could drift out of dat
 
 ## Conformance
 
-Behaviour is pinned by a **differential oracle** against reference Ruby: a corpus
-is run through both the `ruby` binary and this library and the results are compared,
-gated on the reference where relevant and skipping itself where `ruby` is absent so
-the cross-arch lanes still validate the library.
+The parser is **CommonMark spec-complete**: it passes **all 652 / 652
+[CommonMark spec v0.31.2](https://spec.commonmark.org/0.31.2/) examples,
+byte-exact** — 100%, 0 known gaps. The upstream `spec.txt` is embedded and every
+example is run on every CI lane, and a ratchet test fails on any regression, so
+full conformance can only be held, never quietly lost.
+
+[![CommonMark spec v0.31.2 652/652](https://img.shields.io/badge/CommonMark_spec_v0.31.2-652%2F652-1a7f37)](https://spec.commonmark.org/0.31.2/)
+
+Behaviour is additionally pinned by a **differential oracle** against reference
+Ruby: a corpus is run through both the `ruby` binary and this library and the
+results are compared, gated on the reference where relevant and skipping itself
+where `ruby` is absent so the cross-arch lanes still validate the library.
